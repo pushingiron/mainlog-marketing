@@ -1,5 +1,5 @@
 /* ============================================================
-   MainLog Marketing Site — JavaScript
+   AircraftLogs Marketing Site — JavaScript
    ============================================================ */
 
 document.addEventListener('DOMContentLoaded', () => {
