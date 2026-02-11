@@ -1,0 +1,1666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MainLog — AI-Powered Aircraft Maintenance Tracking</title>
+  <meta name="description" content="Track your aircraft maintenance records, ADs, and compliance with AI-powered intelligence. Built by an aircraft owner, for aircraft owners. $15/month per aircraft.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <style>
+/* ============================================================
+   MainLog Marketing Site — Global Styles
+   Aesthetic: Clean aviation-instrument precision meets warm 
+   approachability. Dark navy anchors trust, amber accents 
+   signal action, generous whitespace lets content breathe.
+   ============================================================ */
+
+/* --- Reset & Base --- */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  /* Core palette */
+  --navy:       #0B1D33;
+  --navy-light: #132B4A;
+  --navy-mid:   #1A3A5C;
+  --slate:      #3D5A80;
+  --sky:        #89B0D3;
+  --sky-light:  #C4D9ED;
+  --cream:      #F6F2EC;
+  --white:      #FFFFFF;
+  --amber:      #D4883A;
+  --amber-hover:#C07A2E;
+  --amber-light:#F5E6D0;
+  --green:      #2E8B57;
+  --red-soft:   #C0564B;
+
+  /* Typography */
+  --font-display: 'Instrument Serif', Georgia, serif;
+  --font-body:    'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Spacing scale */
+  --sp-xs: 0.5rem;
+  --sp-sm: 1rem;
+  --sp-md: 1.5rem;
+  --sp-lg: 3rem;
+  --sp-xl: 5rem;
+  --sp-2xl: 8rem;
+
+  /* Sizing */
+  --max-width: 1200px;
+  --nav-height: 72px;
+
+  /* Transitions */
+  --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--navy);
+  background: var(--white);
+  line-height: 1.65;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; height: auto; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* --- Typography --- */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 400; line-height: 1.2; }
+
+h1 { font-size: clamp(2.5rem, 5vw, 4rem); letter-spacing: -0.02em; }
+h2 { font-size: clamp(2rem, 3.5vw, 3rem); letter-spacing: -0.015em; }
+h3 { font-size: clamp(1.4rem, 2vw, 1.75rem); }
+h4 { font-size: 1.25rem; }
+
+p { max-width: 640px; }
+.text-center { text-align: center; }
+.text-center p { margin-left: auto; margin-right: auto; }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+/* --- Buttons --- */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background: var(--amber);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--amber-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(212, 136, 58, 0.35);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  border: 2px solid var(--navy);
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  background: var(--navy);
+  color: var(--white);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  background: transparent;
+  color: var(--navy);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s var(--ease);
+  text-decoration: none;
+}
+.btn-ghost:hover { background: rgba(11,29,51,0.06); }
+
+.btn-primary.btn-light {
+  background: var(--white);
+  color: var(--navy);
+}
+.btn-primary.btn-light:hover {
+  background: var(--cream);
+  box-shadow: 0 4px 16px rgba(255,255,255,0.25);
+}
+
+/* --- Navigation --- */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(11,29,51,0.06);
+  transition: all 0.3s var(--ease);
+}
+.nav.scrolled {
+  box-shadow: 0 2px 24px rgba(11,29,51,0.08);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  color: var(--navy);
+  text-decoration: none;
+}
+.nav-logo svg { color: var(--amber); }
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--slate);
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--navy); }
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.nav-mobile-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+.nav-mobile-toggle span {
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+.nav-mobile {
+  display: none;
+  flex-direction: column;
+  padding: 1rem 2rem 1.5rem;
+  border-top: 1px solid rgba(11,29,51,0.06);
+}
+.nav-mobile a {
+  padding: 0.75rem 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--navy);
+  border-bottom: 1px solid rgba(11,29,51,0.06);
+}
+.nav-mobile .btn-primary {
+  margin-top: 1rem;
+  text-align: center;
+  justify-content: center;
+}
+
+/* --- Hero --- */
+.hero {
+  padding: calc(var(--nav-height) + var(--sp-xl)) 0 var(--sp-xl);
+  background: linear-gradient(175deg, var(--white) 0%, var(--cream) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -200px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,136,58,0.08) 0%, transparent 70%);
+  border-radius: 50%;
+}
+
+.hero-grid {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.hero-content { position: relative; z-index: 2; }
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 1rem;
+  background: rgba(212,136,58,0.1);
+  border: 1px solid rgba(212,136,58,0.2);
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--amber);
+  margin-bottom: 1.5rem;
+}
+.hero-badge svg { width: 16px; height: 16px; }
+
+.hero h1 {
+  margin-bottom: 1.25rem;
+  color: var(--navy);
+}
+.hero h1 em {
+  font-family: var(--font-display);
+  font-style: italic;
+  color: var(--amber);
+}
+
+.hero-subtitle {
+  font-size: 1.15rem;
+  color: var(--slate);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 520px;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.hero-proof {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+.hero-proof-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+.hero-proof-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--green);
+}
+
+.hero-visual {
+  position: relative;
+}
+.hero-screenshot {
+  border-radius: 12px;
+  box-shadow:
+    0 2px 8px rgba(11,29,51,0.06),
+    0 12px 48px rgba(11,29,51,0.12);
+  border: 1px solid rgba(11,29,51,0.08);
+  background: var(--white);
+  width: 100%;
+}
+
+.hero-floating-card {
+  position: absolute;
+  bottom: -20px;
+  left: -30px;
+  background: var(--white);
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 8px 32px rgba(11,29,51,0.12);
+  border: 1px solid rgba(11,29,51,0.06);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  animation: floatUp 3s ease-in-out infinite alternate;
+}
+.hero-floating-card .icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(46,139,87,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--green);
+}
+.hero-floating-card .label {
+  font-size: 0.75rem;
+  color: var(--slate);
+}
+.hero-floating-card .value {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--navy);
+}
+
+@keyframes floatUp {
+  from { transform: translateY(0); }
+  to { transform: translateY(-8px); }
+}
+
+/* --- Sections --- */
+.section {
+  padding: var(--sp-xl) 0;
+}
+.section-dark {
+  background: var(--navy);
+  color: var(--white);
+}
+.section-dark h2,
+.section-dark h3 { color: var(--white); }
+.section-dark p { color: var(--sky-light); }
+.section-dark .eyebrow { color: var(--amber); }
+
+.section-cream {
+  background: var(--cream);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--sp-lg);
+}
+.section-header .eyebrow { margin-bottom: 0.75rem; }
+.section-header h2 { margin-bottom: 1rem; }
+.section-header p {
+  font-size: 1.1rem;
+  color: var(--slate);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- Feature Cards --- */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.feature-card {
+  background: var(--white);
+  border: 1px solid rgba(11,29,51,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.3s var(--ease);
+}
+.feature-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(11,29,51,0.1);
+  border-color: rgba(212,136,58,0.2);
+}
+
+.feature-icon {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+}
+.feature-icon.blue    { background: rgba(137,176,211,0.15); color: var(--slate); }
+.feature-icon.amber   { background: rgba(212,136,58,0.12); color: var(--amber); }
+.feature-icon.green   { background: rgba(46,139,87,0.1); color: var(--green); }
+.feature-icon.navy    { background: rgba(11,29,51,0.08); color: var(--navy); }
+
+.feature-card h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+.feature-card p {
+  font-size: 0.92rem;
+  color: var(--slate);
+  line-height: 1.6;
+}
+
+/* --- AI Spotlight --- */
+.ai-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.ai-demo {
+  background: var(--navy-light);
+  border-radius: 16px;
+  padding: 2rem;
+  font-family: 'DM Sans', monospace;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+.ai-demo-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.ai-demo-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--amber);
+}
+.ai-demo-header span {
+  font-size: 0.8rem;
+  color: var(--sky);
+  font-weight: 500;
+}
+
+.ai-msg {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.ai-msg-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+.ai-msg-avatar.user { background: var(--slate); color: var(--white); }
+.ai-msg-avatar.ai { background: var(--amber); color: var(--white); }
+
+.ai-msg-bubble {
+  font-size: 0.88rem;
+  line-height: 1.55;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  max-width: 90%;
+}
+.ai-msg.user-msg .ai-msg-bubble {
+  background: var(--navy-mid);
+  color: var(--sky-light);
+}
+.ai-msg.ai-msg-response .ai-msg-bubble {
+  background: rgba(212,136,58,0.12);
+  color: var(--sky-light);
+  border: 1px solid rgba(212,136,58,0.15);
+}
+
+.ai-content h3 {
+  margin-bottom: 1rem;
+}
+.ai-content p {
+  margin-bottom: 1rem;
+}
+
+.ai-features-list {
+  list-style: none;
+  margin-top: 1.5rem;
+}
+.ai-features-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.6rem 0;
+  font-size: 0.95rem;
+  color: var(--sky-light);
+}
+.ai-features-list li svg {
+  width: 20px;
+  height: 20px;
+  color: var(--amber);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* --- How It Works --- */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  position: relative;
+}
+.steps-grid::before {
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 16%;
+  right: 16%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--amber), var(--sky), var(--green));
+  opacity: 0.3;
+}
+
+.step-card {
+  text-align: center;
+  position: relative;
+}
+.step-number {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.25rem;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 2;
+}
+.step-card:nth-child(1) .step-number { background: rgba(212,136,58,0.12); color: var(--amber); }
+.step-card:nth-child(2) .step-number { background: rgba(137,176,211,0.15); color: var(--slate); }
+.step-card:nth-child(3) .step-number { background: rgba(46,139,87,0.1); color: var(--green); }
+
+.step-card h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+.step-card p {
+  font-size: 0.92rem;
+  color: var(--slate);
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+/* --- Pricing --- */
+.pricing-card {
+  max-width: 480px;
+  margin: 0 auto;
+  background: var(--white);
+  border: 2px solid rgba(212,136,58,0.25);
+  border-radius: 20px;
+  padding: 3rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.pricing-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--amber), var(--amber-hover));
+}
+
+.pricing-amount {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.25rem;
+  margin: 1.5rem 0;
+}
+.pricing-currency {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--navy);
+}
+.pricing-value {
+  font-family: var(--font-display);
+  font-size: 4rem;
+  color: var(--navy);
+  line-height: 1;
+}
+.pricing-period {
+  font-size: 1rem;
+  color: var(--slate);
+}
+
+.pricing-subtitle {
+  font-size: 0.95rem;
+  color: var(--slate);
+  margin-bottom: 2rem;
+}
+
+.pricing-features {
+  list-style: none;
+  text-align: left;
+  margin-bottom: 2rem;
+}
+.pricing-features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0;
+  font-size: 0.95rem;
+  border-bottom: 1px solid rgba(11,29,51,0.05);
+}
+.pricing-features li:last-child { border-bottom: none; }
+.pricing-features li svg {
+  width: 20px;
+  height: 20px;
+  color: var(--green);
+  flex-shrink: 0;
+}
+
+.pricing-cta {
+  width: 100%;
+  justify-content: center;
+  padding: 1rem;
+  font-size: 1.05rem;
+}
+
+.pricing-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--slate);
+}
+
+.promo-banner {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: rgba(212,136,58,0.08);
+  border: 1px dashed var(--amber);
+  border-radius: 10px;
+  font-size: 0.9rem;
+  color: var(--amber-hover);
+  font-weight: 600;
+}
+
+/* --- Testimonials --- */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.testimonial-card {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 16px;
+  padding: 2rem;
+}
+.testimonial-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+  color: var(--amber);
+}
+.testimonial-card blockquote {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  font-style: italic;
+  color: var(--sky-light);
+}
+.testimonial-author {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--white);
+}
+.testimonial-meta {
+  font-size: 0.8rem;
+  color: var(--sky);
+}
+
+/* --- FAQ --- */
+.faq-list {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  border-bottom: 1px solid rgba(11,29,51,0.08);
+}
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 1.25rem 0;
+  background: none;
+  border: none;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--navy);
+  cursor: pointer;
+  text-align: left;
+}
+.faq-question svg {
+  width: 20px;
+  height: 20px;
+  color: var(--slate);
+  transition: transform 0.3s var(--ease);
+  flex-shrink: 0;
+}
+.faq-item.open .faq-question svg {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s var(--ease);
+}
+.faq-item.open .faq-answer {
+  max-height: 300px;
+}
+.faq-answer p {
+  padding-bottom: 1.25rem;
+  font-size: 0.95rem;
+  color: var(--slate);
+  line-height: 1.7;
+  max-width: 100%;
+}
+
+/* --- CTA Section --- */
+.cta-section {
+  text-align: center;
+  padding: var(--sp-xl) 2rem;
+  background: linear-gradient(170deg, var(--navy) 0%, var(--navy-light) 100%);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(212,136,58,0.1) 0%, transparent 70%);
+  border-radius: 50%;
+}
+.cta-section h2 {
+  color: var(--white);
+  margin-bottom: 1rem;
+  position: relative;
+}
+.cta-section p {
+  color: var(--sky-light);
+  font-size: 1.1rem;
+  margin: 0 auto 2rem;
+  position: relative;
+}
+.cta-section .btn-primary {
+  position: relative;
+}
+
+/* --- Footer --- */
+.footer {
+  background: var(--navy);
+  color: var(--sky);
+  padding: var(--sp-lg) 0 var(--sp-md);
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.footer-brand p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-top: 1rem;
+  max-width: 300px;
+  color: var(--sky);
+}
+
+.footer h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+}
+.footer-links li { margin-bottom: 0.6rem; }
+.footer-links a {
+  font-size: 0.9rem;
+  color: var(--sky);
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--white); }
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  font-size: 0.85rem;
+}
+
+/* --- Page Headers (for inner pages) --- */
+.page-header {
+  padding: calc(var(--nav-height) + var(--sp-lg)) 0 var(--sp-lg);
+  background: linear-gradient(175deg, var(--cream) 0%, var(--white) 100%);
+  text-align: center;
+}
+.page-header .eyebrow { margin-bottom: 0.75rem; }
+.page-header h1 { margin-bottom: 1rem; }
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--slate);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* --- About Page --- */
+.about-story {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.about-story p {
+  margin-bottom: 1rem;
+  color: var(--slate);
+  max-width: 100%;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.value-card {
+  padding: 2rem;
+  border-radius: 16px;
+  background: var(--white);
+  border: 1px solid rgba(11,29,51,0.06);
+}
+.value-card h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin: 1rem 0 0.5rem;
+}
+.value-card p {
+  font-size: 0.92rem;
+  color: var(--slate);
+  max-width: 100%;
+}
+
+/* --- Contact Page --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.form-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--navy);
+}
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid rgba(11,29,51,0.15);
+  border-radius: 8px;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--navy);
+  background: var(--white);
+  transition: border-color 0.2s;
+}
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  outline: none;
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(212,136,58,0.1);
+}
+.form-group textarea { min-height: 140px; resize: vertical; }
+
+.contact-info-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+.contact-info-card {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem;
+  background: var(--cream);
+  border-radius: 12px;
+}
+.contact-info-card .icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(212,136,58,0.12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.contact-info-card h4 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+.contact-info-card p {
+  font-size: 0.9rem;
+  color: var(--slate);
+  max-width: 100%;
+}
+
+/* --- Blog --- */
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+.blog-card {
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--white);
+  border: 1px solid rgba(11,29,51,0.06);
+  transition: all 0.3s var(--ease);
+}
+.blog-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(11,29,51,0.1);
+}
+
+.blog-card-image {
+  height: 200px;
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--amber);
+  font-size: 2.5rem;
+}
+.blog-card-body {
+  padding: 1.5rem;
+}
+.blog-card-tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+  margin-bottom: 0.5rem;
+}
+.blog-card-body h3 {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+}
+.blog-card-body p {
+  font-size: 0.88rem;
+  color: var(--slate);
+  max-width: 100%;
+}
+.blog-card-date {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--sky);
+}
+
+/* --- Responsive --- */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-visual { order: -1; max-width: 600px; margin: 0 auto; }
+  .features-grid { grid-template-columns: repeat(2, 1fr); }
+  .ai-spotlight { grid-template-columns: 1fr; }
+  .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .about-story { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .nav-links, .nav-actions { display: none; }
+  .nav-mobile-toggle { display: flex; }
+  .nav-mobile.open { display: flex; }
+
+  .features-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .steps-grid::before { display: none; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .values-grid { grid-template-columns: 1fr; }
+
+  .hero { padding-top: calc(var(--nav-height) + var(--sp-lg)); }
+  .hero h1 { font-size: 2.2rem; }
+  .hero-actions { flex-direction: column; align-items: flex-start; }
+  .hero-proof { flex-direction: column; align-items: flex-start; gap: 0.5rem; }
+
+  .section { padding: var(--sp-lg) 0; }
+  .pricing-card { padding: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .footer-grid { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+}
+
+</style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="6" fill="currentColor"/>
+          <path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/>
+        </svg>
+        <span>MainLog</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.aircraft-logs.com/users/sign_in" class="btn-ghost">Sign In</a>
+        <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5L15 6.5L11.5 10L12.5 15L8 12.5L3.5 15L4.5 10L1 6.5L6 5.5L8 1Z" fill="currentColor"/></svg>
+          AI-Powered Maintenance Tracking
+        </div>
+        <h1>Your aircraft records,<br><em>finally organized</em></h1>
+        <p class="hero-subtitle">
+          Track maintenance history, monitor AD compliance, and scan logbooks with AI — all in one secure platform built for aircraft owners.
+        </p>
+        <div class="hero-actions">
+          <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">
+            Start Free Trial
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#features" class="btn-secondary">See How It Works</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18.18 7.1L14.09 11.09L15.18 16.86L10 14.15L4.82 16.86L5.91 11.09L1.82 7.1L7.61 6.26L10 1Z" fill="currentColor"/></svg>
+            30-day free trial
+          </div>
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No credit card required
+          </div>
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cancel anytime
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Placeholder for app screenshot — replace with real screenshot -->
+        <div class="hero-screenshot" style="aspect-ratio:4/3; background: linear-gradient(135deg, #f0ece6 0%, #e8e2d8 100%); display:flex; align-items:center; justify-content:center; color:var(--slate); font-size:0.9rem; text-align:center; padding:2rem;">
+          <div>
+            <div style="font-size:3rem; margin-bottom:1rem;">✈️</div>
+            <strong>App Screenshot</strong><br>
+            <span style="font-size:0.8rem; opacity:0.7;">Replace with actual dashboard screenshot</span>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="label">AD Compliance</div>
+            <div class="value">All ADs Current ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Features</div>
+        <h2>Everything you need to manage your aircraft</h2>
+        <p>From daily maintenance logging to AD compliance tracking, MainLog keeps your records organized, searchable, and secure.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon amber">📋</div>
+          <h3>Digital Logbooks</h3>
+          <p>Log maintenance entries with full details — tach time, hobbs, mechanic info, costs, and work descriptions. Everything searchable instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon blue">📡</div>
+          <h3>AD Compliance Tracking</h3>
+          <p>Import ADs directly from the FAA database. Track compliance by calendar time, flight hours, or both. Never miss a deadline.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon green">🤖</div>
+          <h3>AI Assistant</h3>
+          <p>Ask questions in plain English. "When is the next oil change due?" or "Show the last annual inspection." MainLog understands and answers.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon navy">📷</div>
+          <h3>OCR Document Scanning</h3>
+          <p>Photograph paper logbook pages and our AI extracts the text. Turn decades of handwritten records into searchable digital data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon amber">🔧</div>
+          <h3>Component Tracking</h3>
+          <p>Track every component on your aircraft — engines, props, magnetos, filters. Monitor time since overhaul and TBO limits.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon blue">🔒</div>
+          <h3>Secure Cloud Storage</h3>
+          <p>Your data is encrypted, backed up daily, and always accessible. Export everything anytime — your records are always yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI SPOTLIGHT ========== -->
+  <section class="section section-dark" id="ai">
+    <div class="container">
+      <div class="ai-spotlight">
+        <div class="ai-demo">
+          <div class="ai-demo-header">
+            <div class="ai-demo-dot"></div>
+            <span>MainLog AI Assistant</span>
+          </div>
+
+          <div class="ai-msg user-msg">
+            <div class="ai-msg-avatar user">You</div>
+            <div class="ai-msg-bubble">
+              <span class="ai-typing">Show the last oil change for N9069P</span><span style="animation: blink 1s infinite; color:var(--amber);">|</span>
+            </div>
+          </div>
+
+          <div class="ai-msg ai-msg-response">
+            <div class="ai-msg-avatar ai">AI</div>
+            <div class="ai-msg-bubble">
+              ✅ <strong>Found Last Oil Change for N9069P</strong><br><br>
+              📅 June 26, 2025 · Tach: 1234.5<br>
+              Drained and added 9 quarts Phillips 20W-50. New Champion CH48108-1 filter installed.<br><br>
+              <span style="opacity:0.6;">📋 View Full Entry → &nbsp; 📚 All Maintenance →</span>
+            </div>
+          </div>
+
+          <style>@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }</style>
+        </div>
+
+        <div class="ai-content">
+          <div class="eyebrow">AI-Powered</div>
+          <h3>Talk to your logbooks</h3>
+          <p>No more digging through pages. Ask MainLog anything about your aircraft in plain English and get instant answers.</p>
+          <p>Our AI understands aviation context — it knows what an annual is, how oil change intervals work, and what AD compliance means.</p>
+
+          <ul class="ai-features-list">
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Find any maintenance record instantly
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Calculate when maintenance is due
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Create entries with natural language
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Scan paper logs with AI-powered OCR
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">How It Works</div>
+        <h2>Up and running in minutes</h2>
+        <p>MainLog automatically sets up your aircraft with FAA data — you just start logging.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Create your account</h3>
+          <p>Sign up, enter your N-number, and MainLog automatically imports your aircraft data and applicable ADs from the FAA database.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Add your records</h3>
+          <p>Upload scanned logbooks, type entries manually, or use our AI to create records from plain English descriptions.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Stay compliant</h3>
+          <p>MainLog tracks your AD compliance, calculates due dates, and keeps everything organized for annuals, pre-buys, and resale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Pricing</div>
+        <h2>Simple, honest pricing</h2>
+        <p>One plan. Everything included. No surprises.</p>
+      </div>
+
+      <div class="pricing-card">
+        <div class="eyebrow">Per Aircraft</div>
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-value">15</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <p class="pricing-subtitle">per aircraft · billed monthly · cancel anytime</p>
+
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Unlimited storage
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100 AI chat messages / month
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            50 OCR document scans / month
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Full AD compliance tracking
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Component & hours tracking
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Data export anytime
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Automatic FAA data import
+          </li>
+        </ul>
+
+        <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary pricing-cta">
+          Start Your 30-Day Free Trial
+        </a>
+        <p class="pricing-note">No credit card required · Cancel anytime</p>
+
+        <div class="promo-banner">
+          🎉 Use code <strong>INTRO</strong> for 50% off your first 3 months
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">FAQ</div>
+        <h2>Common questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my data secure?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Your data is protected with bank-level encryption, stored on secure cloud servers, and backed up daily. Only you can access your records — we never share, sell, or give access to your data to anyone.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I import my existing paper logbooks?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can scan or photograph your paper logbook pages and use our AI-powered OCR to extract the text into searchable digital records. You can also manually type entries or upload PDFs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens if I cancel?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Your data is always yours. You can export all your records anytime, and we'll never hold your data hostage. If you cancel, your subscription runs through the end of your billing period.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How does AD tracking work?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>When you add your aircraft, MainLog automatically imports applicable Airworthiness Directives from the FAA database. You set compliance dates and intervals, and MainLog tracks whether each AD is current — by calendar time, flight hours, or both.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What aircraft types are supported?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>MainLog supports any general aviation aircraft with an FAA registration. Single-engine, multi-engine, piston, turboprop — if it has an N-number, MainLog can track it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Who can see my data?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Only you. MainLog is designed with privacy first. We do not share, sell, or provide access to your maintenance records to anyone. Your data is your data, period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to protect your aircraft's value?</h2>
+      <p>Join aircraft owners who trust MainLog to keep their maintenance records organized, compliant, and accessible.</p>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary btn-light">
+        Start Your Free Trial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="color:var(--white);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="6" fill="var(--amber)"/>
+              <path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/>
+            </svg>
+            <span>MainLog</span>
+          </a>
+          <p>AI-powered aircraft maintenance tracking. Built by an aircraft owner, for aircraft owners.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_up">Start Free Trial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="https://app.aircraft-logs.com/terms_of_service">Terms of Service</a></li>
+            <li><a href="https://app.aircraft-logs.com/terms">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aircraft-Logs.com. All rights reserved.</span>
+        <span>Made with ✈️ in the USA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+/* ============================================================
+   MainLog Marketing Site — JavaScript
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+
+  // --- Sticky nav scroll effect ---
+  const nav = document.getElementById('nav');
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    }, { passive: true });
+  }
+
+  // --- Mobile menu toggle ---
+  const toggle = document.getElementById('mobileToggle');
+  const menu = document.getElementById('mobileMenu');
+  if (toggle && menu) {
+    toggle.addEventListener('click', () => {
+      menu.classList.toggle('open');
+      toggle.classList.toggle('open');
+    });
+    // Close on link click
+    menu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        menu.classList.remove('open');
+        toggle.classList.remove('open');
+      });
+    });
+  }
+
+  // --- FAQ accordion ---
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      // Toggle current
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // --- Scroll reveal animation ---
+  const reveals = document.querySelectorAll('.reveal');
+  if (reveals.length && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    reveals.forEach(el => observer.observe(el));
+  }
+
+  // --- Smooth scroll for anchor links ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e) => {
+      const target = document.querySelector(anchor.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        const offset = 80;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top, behavior: 'smooth' });
+      }
+    });
+  });
+
+  // --- AI chat typing animation ---
+  const typingEl = document.querySelector('.ai-typing');
+  if (typingEl) {
+    const messages = [
+      'Show the last oil change for N9069P',
+      'When is the next annual due?',
+      'Find maintenance about fuel pump',
+      'Add engine oil filter to N12345'
+    ];
+    let msgIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+    let pauseTimer = null;
+
+    function typeLoop() {
+      const current = messages[msgIndex];
+      if (!deleting) {
+        typingEl.textContent = current.substring(0, charIndex + 1);
+        charIndex++;
+        if (charIndex === current.length) {
+          deleting = true;
+          pauseTimer = setTimeout(typeLoop, 2200);
+          return;
+        }
+        setTimeout(typeLoop, 55);
+      } else {
+        typingEl.textContent = current.substring(0, charIndex);
+        charIndex--;
+        if (charIndex < 0) {
+          deleting = false;
+          charIndex = 0;
+          msgIndex = (msgIndex + 1) % messages.length;
+          setTimeout(typeLoop, 400);
+          return;
+        }
+        setTimeout(typeLoop, 30);
+      }
+    }
+    setTimeout(typeLoop, 1000);
+  }
+
+});
+
+</script>
+</body>
+</html>

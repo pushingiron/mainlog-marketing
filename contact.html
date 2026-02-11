@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — MainLog</title>
+  <meta name="description" content="Get in touch with the MainLog team. We're here to help with questions about aircraft maintenance tracking.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="currentColor"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg><span>MainLog</span></a>
+      <div class="nav-links"><a href="index.html#features">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
+      <div class="nav-actions"><a href="https://app.aircraft-logs.com/users/sign_in" class="btn-ghost">Sign In</a><a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a></div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu"><a href="index.html#features">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a></div>
+  </nav>
+
+  <section class="page-header">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h1>Get in touch</h1>
+      <p>Have a question about MainLog? Want to share feedback? We'd love to hear from you.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="contact-grid">
+        <div>
+          <h2 style="margin-bottom:1.5rem;">Send us a message</h2>
+          <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:1.25rem;">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <select id="subject" name="subject">
+                <option value="general">General Question</option>
+                <option value="support">Technical Support</option>
+                <option value="billing">Billing Question</option>
+                <option value="feature">Feature Request</option>
+                <option value="partnership">Partnership Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" placeholder="How can we help?" required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="align-self:flex-start;">
+              Send Message
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            </button>
+          </form>
+          <p style="font-size:0.8rem; color:var(--slate); margin-top:1rem;">We typically respond within 24 hours.</p>
+        </div>
+
+        <div>
+          <h2 style="margin-bottom:1.5rem;">Other ways to reach us</h2>
+          <div class="contact-info-cards">
+            <div class="contact-info-card">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 5L10 10L17 5M3 5V15H17V5M3 5H17" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h4>Email</h4>
+                <p>support@aircraft-logs.com</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M10 6V10L13 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div>
+                <h4>Response Time</h4>
+                <p>Usually within 24 hours, often faster</p>
+              </div>
+            </div>
+
+            <div class="contact-info-card">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C6 2 3 5 3 9C3 14 10 18 10 18C10 18 17 14 17 9C17 5 14 2 10 2Z" stroke="currentColor" stroke-width="1.5"/><circle cx="10" cy="9" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div>
+                <h4>Location</h4>
+                <p>Pacific Northwest, USA</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="margin-top:2rem; padding:1.5rem; background:var(--cream); border-radius:12px;">
+            <h4 style="font-family:var(--font-body); font-weight:600; margin-bottom:0.5rem;">Already a customer?</h4>
+            <p style="font-size:0.9rem; color:var(--slate); max-width:100%;">Use the AI chat inside the app for instant help with features and navigation. It knows the application inside and out.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="nav-logo" style="color:var(--white);"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--amber)"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg><span>MainLog</span></a><p>AI-powered aircraft maintenance tracking. Built by an aircraft owner, for aircraft owners.</p></div>
+        <div><h4>Product</h4><ul class="footer-links"><li><a href="index.html#features">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a></li></ul></div>
+        <div><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+        <div><h4>Legal</h4><ul class="footer-links"><li><a href="https://app.aircraft-logs.com/terms_of_service">Terms</a></li><li><a href="https://app.aircraft-logs.com/terms">Privacy</a></li></ul></div>
+      </div>
+      <div class="footer-bottom"><span>&copy; 2026 Aircraft-Logs.com. All rights reserved.</span><span>Made with ✈️ in the USA</span></div>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+</html>

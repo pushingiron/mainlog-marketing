@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MainLog — AI-Powered Aircraft Maintenance Tracking</title>
+  <meta name="description" content="Track your aircraft maintenance records, ADs, and compliance with AI-powered intelligence. Built by an aircraft owner, for aircraft owners. $15/month per aircraft.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+          <rect width="28" height="28" rx="6" fill="currentColor"/>
+          <path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/>
+        </svg>
+        <span>MainLog</span>
+      </a>
+      <div class="nav-links">
+        <a href="#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.aircraft-logs.com/users/sign_in" class="btn-ghost">Sign In</a>
+        <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+      </div>
+      <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero">
+    <div class="hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <svg viewBox="0 0 16 16" fill="none"><path d="M8 1L10 5.5L15 6.5L11.5 10L12.5 15L8 12.5L3.5 15L4.5 10L1 6.5L6 5.5L8 1Z" fill="currentColor"/></svg>
+          AI-Powered Maintenance Tracking
+        </div>
+        <h1>Your aircraft records,<br><em>finally organized</em></h1>
+        <p class="hero-subtitle">
+          Track maintenance history, monitor AD compliance, and scan logbooks with AI — all in one secure platform built for aircraft owners.
+        </p>
+        <div class="hero-actions">
+          <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">
+            Start Free Trial
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </a>
+          <a href="#features" class="btn-secondary">See How It Works</a>
+        </div>
+        <div class="hero-proof">
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 1L12.39 6.26L18.18 7.1L14.09 11.09L15.18 16.86L10 14.15L4.82 16.86L5.91 11.09L1.82 7.1L7.61 6.26L10 1Z" fill="currentColor"/></svg>
+            30-day free trial
+          </div>
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            No credit card required
+          </div>
+          <div class="hero-proof-item">
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Cancel anytime
+          </div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <!-- Placeholder for app screenshot — replace with real screenshot -->
+        <div class="hero-screenshot" style="aspect-ratio:4/3; background: linear-gradient(135deg, #f0ece6 0%, #e8e2d8 100%); display:flex; align-items:center; justify-content:center; color:var(--slate); font-size:0.9rem; text-align:center; padding:2rem;">
+          <div>
+            <div style="font-size:3rem; margin-bottom:1rem;">✈️</div>
+            <strong>App Screenshot</strong><br>
+            <span style="font-size:0.8rem; opacity:0.7;">Replace with actual dashboard screenshot</span>
+          </div>
+        </div>
+        <div class="hero-floating-card">
+          <div class="icon">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </div>
+          <div>
+            <div class="label">AD Compliance</div>
+            <div class="value">All ADs Current ✓</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FEATURES ========== -->
+  <section class="section" id="features">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Features</div>
+        <h2>Everything you need to manage your aircraft</h2>
+        <p>From daily maintenance logging to AD compliance tracking, MainLog keeps your records organized, searchable, and secure.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon amber">📋</div>
+          <h3>Digital Logbooks</h3>
+          <p>Log maintenance entries with full details — tach time, hobbs, mechanic info, costs, and work descriptions. Everything searchable instantly.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon blue">📡</div>
+          <h3>AD Compliance Tracking</h3>
+          <p>Import ADs directly from the FAA database. Track compliance by calendar time, flight hours, or both. Never miss a deadline.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon green">🤖</div>
+          <h3>AI Assistant</h3>
+          <p>Ask questions in plain English. "When is the next oil change due?" or "Show the last annual inspection." MainLog understands and answers.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon navy">📷</div>
+          <h3>OCR Document Scanning</h3>
+          <p>Photograph paper logbook pages and our AI extracts the text. Turn decades of handwritten records into searchable digital data.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon amber">🔧</div>
+          <h3>Component Tracking</h3>
+          <p>Track every component on your aircraft — engines, props, magnetos, filters. Monitor time since overhaul and TBO limits.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon blue">🔒</div>
+          <h3>Secure Cloud Storage</h3>
+          <p>Your data is encrypted, backed up daily, and always accessible. Export everything anytime — your records are always yours.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== AI SPOTLIGHT ========== -->
+  <section class="section section-dark" id="ai">
+    <div class="container">
+      <div class="ai-spotlight">
+        <div class="ai-demo">
+          <div class="ai-demo-header">
+            <div class="ai-demo-dot"></div>
+            <span>MainLog AI Assistant</span>
+          </div>
+
+          <div class="ai-msg user-msg">
+            <div class="ai-msg-avatar user">You</div>
+            <div class="ai-msg-bubble">
+              <span class="ai-typing">Show the last oil change for N9069P</span><span style="animation: blink 1s infinite; color:var(--amber);">|</span>
+            </div>
+          </div>
+
+          <div class="ai-msg ai-msg-response">
+            <div class="ai-msg-avatar ai">AI</div>
+            <div class="ai-msg-bubble">
+              ✅ <strong>Found Last Oil Change for N9069P</strong><br><br>
+              📅 June 26, 2025 · Tach: 1234.5<br>
+              Drained and added 9 quarts Phillips 20W-50. New Champion CH48108-1 filter installed.<br><br>
+              <span style="opacity:0.6;">📋 View Full Entry → &nbsp; 📚 All Maintenance →</span>
+            </div>
+          </div>
+
+          <style>@keyframes blink { 0%,50%{opacity:1} 51%,100%{opacity:0} }</style>
+        </div>
+
+        <div class="ai-content">
+          <div class="eyebrow">AI-Powered</div>
+          <h3>Talk to your logbooks</h3>
+          <p>No more digging through pages. Ask MainLog anything about your aircraft in plain English and get instant answers.</p>
+          <p>Our AI understands aviation context — it knows what an annual is, how oil change intervals work, and what AD compliance means.</p>
+
+          <ul class="ai-features-list">
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Find any maintenance record instantly
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Calculate when maintenance is due
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Create entries with natural language
+            </li>
+            <li>
+              <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+              Scan paper logs with AI-powered OCR
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== HOW IT WORKS ========== -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">How It Works</div>
+        <h2>Up and running in minutes</h2>
+        <p>MainLog automatically sets up your aircraft with FAA data — you just start logging.</p>
+      </div>
+
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <h3>Create your account</h3>
+          <p>Sign up, enter your N-number, and MainLog automatically imports your aircraft data and applicable ADs from the FAA database.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <h3>Add your records</h3>
+          <p>Upload scanned logbooks, type entries manually, or use our AI to create records from plain English descriptions.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <h3>Stay compliant</h3>
+          <p>MainLog tracks your AD compliance, calculates due dates, and keeps everything organized for annuals, pre-buys, and resale.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PRICING ========== -->
+  <section class="section" id="pricing">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Pricing</div>
+        <h2>Simple, honest pricing</h2>
+        <p>One plan. Everything included. No surprises.</p>
+      </div>
+
+      <div class="pricing-card">
+        <div class="eyebrow">Per Aircraft</div>
+        <div class="pricing-amount">
+          <span class="pricing-currency">$</span>
+          <span class="pricing-value">15</span>
+          <span class="pricing-period">/month</span>
+        </div>
+        <p class="pricing-subtitle">per aircraft · billed monthly · cancel anytime</p>
+
+        <ul class="pricing-features">
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Unlimited storage
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            100 AI chat messages / month
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            50 OCR document scans / month
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Full AD compliance tracking
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Component & hours tracking
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Data export anytime
+          </li>
+          <li>
+            <svg viewBox="0 0 20 20" fill="none"><path d="M16 5L7.75 13.25L4 9.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Automatic FAA data import
+          </li>
+        </ul>
+
+        <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary pricing-cta">
+          Start Your 30-Day Free Trial
+        </a>
+        <p class="pricing-note">No credit card required · Cancel anytime</p>
+
+        <div class="promo-banner">
+          🎉 Use code <strong>INTRO</strong> for 50% off your first 3 months
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FAQ ========== -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">FAQ</div>
+        <h2>Common questions</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <button class="faq-question">
+            Is my data secure?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Your data is protected with bank-level encryption, stored on secure cloud servers, and backed up daily. Only you can access your records — we never share, sell, or give access to your data to anyone.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Can I import my existing paper logbooks?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes! You can scan or photograph your paper logbook pages and use our AI-powered OCR to extract the text into searchable digital records. You can also manually type entries or upload PDFs.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What happens if I cancel?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Your data is always yours. You can export all your records anytime, and we'll never hold your data hostage. If you cancel, your subscription runs through the end of your billing period.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            How does AD tracking work?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>When you add your aircraft, MainLog automatically imports applicable Airworthiness Directives from the FAA database. You set compliance dates and intervals, and MainLog tracks whether each AD is current — by calendar time, flight hours, or both.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            What aircraft types are supported?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>MainLog supports any general aviation aircraft with an FAA registration. Single-engine, multi-engine, piston, turboprop — if it has an N-number, MainLog can track it.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            Who can see my data?
+            <svg viewBox="0 0 20 20" fill="none"><path d="M10 4V16M4 10H16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Only you. MainLog is designed with privacy first. We do not share, sell, or provide access to your maintenance records to anyone. Your data is your data, period.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CTA ========== -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Ready to protect your aircraft's value?</h2>
+      <p>Join aircraft owners who trust MainLog to keep their maintenance records organized, compliant, and accessible.</p>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary btn-light">
+        Start Your Free Trial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="color:var(--white);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
+              <rect width="28" height="28" rx="6" fill="var(--amber)"/>
+              <path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/>
+            </svg>
+            <span>MainLog</span>
+          </a>
+          <p>AI-powered aircraft maintenance tracking. Built by an aircraft owner, for aircraft owners.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_up">Start Free Trial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="https://app.aircraft-logs.com/terms_of_service">Terms of Service</a></li>
+            <li><a href="https://app.aircraft-logs.com/terms">Privacy Policy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aircraft-Logs.com. All rights reserved.</span>
+        <span>Made with ✈️ in the USA</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
