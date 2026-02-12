@@ -1,4 +1,4 @@
-# MainLog Marketing Site
+# Aircraft Logs Marketing Site
 
 Marketing website for [Aircraft-Logs.com](https://aircraft-logs.com) — AI-powered aircraft maintenance tracking.
 
@@ -16,11 +16,11 @@ This site is designed for **GitHub Pages** (free hosting):
 
 ### Quick Setup
 
-1. Create a new GitHub repo (e.g., `mainlog-marketing`)
+1. Create a new GitHub repo (e.g., `aircraft-logs-site`)
 2. Push these files to the `main` branch
 3. Go to **Settings → Pages**
 4. Set source to "Deploy from a branch" → `main` → `/ (root)`
-5. Your site will be live at `https://yourusername.github.io/mainlog-marketing/`
+5. Your site will be live at `https://yourusername.github.io/aircraft-logs-site/`
 
 ### Custom Domain
 
@@ -56,7 +56,7 @@ The contact page uses [Formspree](https://formspree.io) for form handling:
 ### Screenshots
 Replace the placeholder divs in `index.html` with actual app screenshots:
 ```html
-<img src="images/dashboard-screenshot.png" alt="MainLog Dashboard" class="hero-screenshot">
+<img src="images/dashboard-screenshot.png" alt="Aircraft Logs Dashboard" class="hero-screenshot">
 ```
 
 ### Photo
