@@ -4,6 +4,20 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  // --- Announcement bar dismiss ---
+  const announcement = document.getElementById('announcementBar');
+  const announceClose = document.getElementById('announcementClose');
+  if (announcement && announceClose) {
+    // Check if previously dismissed
+    if (localStorage.getItem('announcement_dismissed') === 'intro50') {
+      announcement.classList.add('hidden');
+    }
+    announceClose.addEventListener('click', () => {
+      announcement.classList.add('hidden');
+      localStorage.setItem('announcement_dismissed', 'intro50');
+    });
+  }
+
   // --- Sticky nav scroll effect ---
   const nav = document.getElementById('nav');
   if (nav) {
