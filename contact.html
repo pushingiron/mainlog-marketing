@@ -4,46 +4,101 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact — Aircraft Logs</title>
-  <meta name="description" content="Get in touch with the Aircraft Logs team. We're here to help with questions about aircraft maintenance tracking.">
+  <meta name="description" content="Get in touch with the Aircraft Logs team. Questions about features, pricing, or getting started — we'd love to hear from you.">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aircraft-logs.com/contact.html">
+  <meta property="og:title" content="Contact — Aircraft Logs">
+  <meta property="og:description" content="Questions about Aircraft Logs? We typically respond within 24 hours.">
+  <meta property="og:image" content="https://aircraft-logs.com/images/dashboard.png">
+  <meta property="og:site_name" content="Aircraft Logs">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Contact — Aircraft Logs">
+  <meta name="twitter:description" content="Questions about Aircraft Logs? We typically respond within 24 hours.">
+  <meta name="twitter:image" content="https://aircraft-logs.com/images/dashboard.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aircraft-logs.com/contact.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='6' fill='%23D4883A'/><path d='M14 5L9 13H13V23L19 15H15V5Z' fill='white' opacity='0.9'/></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container">
+      <p>✈️ <strong>Introductory Pricing</strong> — 50% off for our first 50 customers. <a href="pricing.html">Learn more →</a></p>
+    </div>
+    <button class="announcement-close" id="announcementClose" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
+  <!-- NAV -->
   <nav class="nav" id="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="currentColor"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg><span>Aircraft Logs</span></a>
-      <div class="nav-links"><a href="index.html#features">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a></div>
-      <div class="nav-actions"><a href="https://app.aircraft-logs.com/users/sign_in" class="btn-ghost">Sign In</a><a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a></div>
+      <a href="/" class="nav-logo">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="currentColor"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg>
+        <span>Aircraft Logs</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html#features">Features</a>
+        <a href="pricing.html">Pricing</a>
+        <a href="about.html">About</a>
+        <a href="blog.html">Blog</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="nav-actions">
+        <a href="https://app.aircraft-logs.com/users/sign_in" class="btn-ghost">Sign In</a>
+        <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+      </div>
       <button class="nav-mobile-toggle" id="mobileToggle" aria-label="Toggle menu"><span></span><span></span><span></span></button>
     </div>
-    <div class="nav-mobile" id="mobileMenu"><a href="index.html#features">Features</a><a href="pricing.html">Pricing</a><a href="about.html">About</a><a href="blog.html">Blog</a><a href="contact.html">Contact</a><a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a></div>
+    <div class="nav-mobile" id="mobileMenu">
+      <a href="index.html#features">Features</a>
+      <a href="pricing.html">Pricing</a>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="contact.html">Contact</a>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary">Start Free Trial</a>
+    </div>
   </nav>
 
+  <!-- HEADER -->
   <section class="page-header">
     <div class="container">
       <div class="eyebrow">Contact</div>
       <h1>Get in touch</h1>
-      <p>Have a question about Aircraft Logs? Want to share feedback? We'd love to hear from you.</p>
+      <p>Have a question about Aircraft Logs? Want to share feedback or a feature idea? We'd love to hear from you.</p>
     </div>
   </section>
 
+  <!-- CONTACT BODY -->
   <section class="section">
     <div class="container">
       <div class="contact-grid">
-        <div>
-          <h2 style="margin-bottom:1rem;">Drop us an email</h2>
-          <p style="color:var(--slate); margin-bottom:2rem; max-width:100%;">Whether you have a question about features, need help getting started, or just want to say hello — we'd love to hear from you.</p>
-          <a href="mailto:support@aircraft-logs.com" class="btn-primary" style="font-size:1.1rem; padding:1rem 2rem;">
+
+        <!-- Left: Email CTA -->
+        <div class="contact-main">
+          <div class="eyebrow">Say Hello</div>
+          <h2>Drop us an email</h2>
+          <p>Whether you have a question about features, need help getting started, want to report a bug, or just want to say hello — reach out. We're a small team and we read every message.</p>
+          <a href="mailto:support@aircraft-logs.com" class="contact-email-btn">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="4" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M2 7L10 12L18 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             support@aircraft-logs.com
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
           </a>
-          <p style="font-size:0.85rem; color:var(--slate); margin-top:1rem;">We typically respond within 24 hours.</p>
+          <p class="contact-response-note">We typically respond within 24 hours.</p>
         </div>
 
+        <!-- Right: Info cards -->
         <div>
-          <h2 style="margin-bottom:1.5rem;">We will get back to you as soon as we can</h2>
           <div class="contact-info-cards">
 
             <div class="contact-info-card">
@@ -65,28 +120,87 @@
                 <p>Pacific Northwest, USA</p>
               </div>
             </div>
+
+            <div class="contact-info-card">
+              <div class="icon">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.39 7.26L18.18 8.1L14.09 12.09L15.18 17.86L10 15.15L4.82 17.86L5.91 12.09L1.82 8.1L7.61 7.26L10 2Z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div>
+                <h4>Built by a pilot</h4>
+                <p>Aircraft owner using this every day</p>
+              </div>
+            </div>
+
           </div>
 
-          <div style="margin-top:2rem; padding:1.5rem; background:var(--cream); border-radius:12px;">
-            <h4 style="font-family:var(--font-body); font-weight:600; margin-bottom:0.5rem;">Already a customer?</h4>
-            <p style="font-size:0.9rem; color:var(--slate); max-width:100%;">Use the AI chat inside the app for instant help with features and navigation. It knows the application inside and out.</p>
+          <div class="contact-app-tip">
+            <div class="contact-app-tip-icon">💬</div>
+            <div>
+              <h4>Already a customer?</h4>
+              <p>Use the AI assistant inside the app for instant help with features, navigation, and your maintenance records. It knows Aircraft Logs inside and out.</p>
+            </div>
           </div>
+
         </div>
       </div>
     </div>
   </section>
 
+  <!-- CTA -->
+  <section class="cta-section">
+    <div class="container">
+      <h2>Not a customer yet? Start free.</h2>
+      <p>30 days free, no credit card required. See if Aircraft Logs works for you.</p>
+      <a href="https://app.aircraft-logs.com/users/sign_up" class="btn-primary btn-light">
+        Start Your Free Trial
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container">
       <div class="footer-grid">
-        <div class="footer-brand"><a href="/" class="nav-logo" style="color:var(--white);"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--amber)"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg><span>Aircraft Logs</span></a><p>AI-powered aircraft maintenance tracking. Built by an aircraft owner, for aircraft owners.</p></div>
-        <div><h4>Product</h4><ul class="footer-links"><li><a href="index.html#features">Features</a></li><li><a href="pricing.html">Pricing</a></li><li><a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a></li></ul></div>
-        <div><h4>Company</h4><ul class="footer-links"><li><a href="about.html">About</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact</a></li></ul></div>
-        <div><h4>Legal</h4><ul class="footer-links"><li><a href="https://app.aircraft-logs.com/terms_of_service">Terms</a></li><li><a href="https://app.aircraft-logs.com/terms">Privacy</a></li></ul></div>
+        <div class="footer-brand">
+          <a href="/" class="nav-logo" style="color:var(--white);">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="var(--amber)"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg>
+            <span>Aircraft Logs</span>
+          </a>
+          <p>AI-powered aircraft maintenance tracking. Built by an aircraft owner, for aircraft owners.</p>
+        </div>
+        <div>
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="index.html#features">Features</a></li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_in">Sign In</a></li>
+            <li><a href="https://app.aircraft-logs.com/users/sign_up">Start Free Trial</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul class="footer-links">
+            <li><a href="https://app.aircraft-logs.com/terms_of_service">Terms of Service</a></li>
+            <li><a href="https://app.aircraft-logs.com/terms">Privacy Policy</a></li>
+          </ul>
+        </div>
       </div>
-      <div class="footer-bottom"><span>&copy; 2026 Aircraft-Logs.com. All rights reserved.</span><span>Made with ✈️ in the USA</span></div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Aircraft-Logs.com. All rights reserved.</span>
+        <span>Made with ✈️ in the USA</span>
+      </div>
     </div>
   </footer>
+
   <script src="main.js"></script>
 </body>
 </html>

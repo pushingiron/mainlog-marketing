@@ -4,13 +4,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog — Aircraft Logs</title>
-  <meta name="description" content="Aircraft maintenance tips, AD tracking guides, and aviation record-keeping best practices from Aircraft Logs.">
+  <meta name="description" content="Aircraft maintenance tips, AD tracking guides, and aviation record-keeping best practices from the Aircraft Logs team.">
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://aircraft-logs.com/blog.html">
+  <meta property="og:title" content="Blog — Aircraft Logs">
+  <meta property="og:description" content="Practical guides for aircraft owners on record-keeping, AD tracking, and getting the most from your maintenance program.">
+  <meta property="og:image" content="https://aircraft-logs.com/images/dashboard.png">
+  <meta property="og:site_name" content="Aircraft Logs">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Blog — Aircraft Logs">
+  <meta name="twitter:description" content="Practical guides for aircraft owners on record-keeping, AD tracking, and getting the most from your maintenance program.">
+  <meta name="twitter:image" content="https://aircraft-logs.com/images/dashboard.png">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://aircraft-logs.com/blog.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'><rect width='28' height='28' rx='6' fill='%23D4883A'/><path d='M14 5L9 13H13V23L19 15H15V5Z' fill='white' opacity='0.9'/></svg>">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+  <!-- ANNOUNCEMENT BANNER -->
+  <div class="announcement-bar" id="announcementBar">
+    <div class="container">
+      <p>✈️ <strong>Introductory Pricing</strong> — 50% off for our first 50 customers. <a href="pricing.html">Learn more →</a></p>
+    </div>
+    <button class="announcement-close" id="announcementClose" aria-label="Dismiss announcement">&times;</button>
+  </div>
+
   <nav class="nav" id="nav">
     <div class="nav-inner">
       <a href="/" class="nav-logo"><svg width="28" height="28" viewBox="0 0 28 28" fill="none"><rect width="28" height="28" rx="6" fill="currentColor"/><path d="M14 5L9 13H13V23L19 15H15V5Z" fill="white" opacity="0.9"/></svg><span>Aircraft Logs</span></a>
@@ -29,69 +59,85 @@
     </div>
   </section>
 
+  <!-- FEATURED POST -->
   <section class="section">
     <div class="container">
+      <div class="eyebrow" style="margin-bottom:1rem;">Latest Post</div>
+      <a href="blog/understanding-airworthiness.html" class="blog-featured-card">
+        <div class="blog-featured-image">📋</div>
+        <div class="blog-featured-body">
+          <div class="blog-card-tag">Airworthiness</div>
+          <h2>Understanding Airworthiness: A Practical Take for Aircraft Owners</h2>
+          <p>What airworthiness really means, why it goes beyond the annual, and how organized records make all the difference when it matters most.</p>
+          <div class="blog-featured-cta">
+            Read the article
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M3 8H13M10 5L13 8L10 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          </div>
+          <div class="blog-card-date">February 2026</div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ALL POSTS -->
+  <section class="section section-cream">
+    <div class="container">
+      <div class="section-header">
+        <div class="eyebrow">Coming Up</div>
+        <h2>More articles on the way</h2>
+        <p>We publish practical guides for aircraft owners. Here's what's coming next.</p>
+      </div>
       <div class="blog-grid">
 
-        <a href="blog/understanding-airworthiness.html" class="blog-card">
-          <div class="blog-card-image">📋</div>
-          <div class="blog-card-body">
-            <div class="blog-card-tag">Airworthiness</div>
-            <h3>Understanding Airworthiness: A Practical Take for Aircraft Owners</h3>
-            <p>What airworthiness really means, why it goes beyond the annual, and how organized records make all the difference.</p>
-            <div class="blog-card-date">February 2026</div>
-          </div>
-        </a>
-
-        <a href="#" class="blog-card">
+        <a href="blog/oil-change-logging.html" class="blog-card">
           <div class="blog-card-image">🔧</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">Maintenance</div>
-            <h3>Oil Change Logging: How to use master items for a quick logbook entry</h3>
-            <p>Best practices for tracking oil changes, entering data, and how to use tach time vs. calendar time.</p>
-            <div class="blog-card-date">Coming Soon</div>
+            <h3>Oil Change Logging: Master Items for a Quick Logbook Entry</h3>
+            <p>Best practices for tracking oil changes and how to use tach time vs. calendar time.</p>
+            <div class="blog-card-date">March 2026</div>
           </div>
         </a>
 
-        <a href="#" class="blog-card">
+        <a href="blog/paper-to-digital.html" class="blog-card">
           <div class="blog-card-image">📱</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">Digital Records</div>
             <h3>Paper to Digital: How to Digitize Your Aircraft Logbooks</h3>
-            <p>A step-by-step guide to converting your paper maintenance records into searchable digital format.</p>
-            <div class="blog-card-date">Coming Soon</div>
+            <p>A step-by-step guide to converting paper maintenance records into searchable digital format.</p>
+            <div class="blog-card-date">March 2026</div>
           </div>
         </a>
 
-        <a href="#" class="blog-card">
+        <div class="blog-card blog-card-upcoming">
           <div class="blog-card-image">💰</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">Ownership</div>
             <h3>How Maintenance Records Affect Your Aircraft's Resale Value</h3>
             <p>Why complete, organized logbooks can mean the difference between a strong sale price and a lowball offer.</p>
-            <div class="blog-card-date">Coming Soon</div>
+            <div class="blog-coming-soon-badge">Coming Soon</div>
           </div>
-        </a>
+        </div>
 
-        <a href="#" class="blog-card">
+        <div class="blog-card blog-card-upcoming">
           <div class="blog-card-image">🤖</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">AI Features</div>
             <h3>Using AI to Manage Your Aircraft Maintenance</h3>
-            <p>How Aircraft Logs's AI assistant helps you find records, monitor AD status, and answer questions in plain English.</p>
-            <div class="blog-card-date">Coming Soon</div>
+            <p>How the Aircraft Logs AI assistant helps you find records, monitor ADs, and answer questions in plain English.</p>
+            <div class="blog-coming-soon-badge">Coming Soon</div>
           </div>
-        </a>
+        </div>
 
-        <a href="#" class="blog-card">
+        <div class="blog-card blog-card-upcoming">
           <div class="blog-card-image">📅</div>
           <div class="blog-card-body">
             <div class="blog-card-tag">Planning</div>
             <h3>Annual Inspection Prep: What to Have Ready</h3>
             <p>Make your annual inspection smoother and cheaper by having your records organized and accessible.</p>
-            <div class="blog-card-date">Coming Soon</div>
+            <div class="blog-coming-soon-badge">Coming Soon</div>
           </div>
-        </a>
+        </div>
 
       </div>
     </div>
