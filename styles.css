@@ -1442,12 +1442,193 @@ p { max-width: 640px; }
   margin: 2.5rem 0;
 }
 
+/* --- Photo Backup Spotlight --- */
+.photo-spotlight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.photo-spotlight-content h3 {
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  margin: 0.5rem 0 1rem;
+}
+
+.photo-spotlight-content p {
+  color: #5a6a7a;
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
+
+.photo-features-list {
+  margin: 1.5rem 0;
+  color: var(--navy);
+}
+
+.photo-features-list li svg path {
+  stroke: var(--amber);
+}
+
+.photo-spotlight-link {
+  display: inline-flex;
+  margin-top: 0.5rem;
+}
+
+.photo-spotlight-demo {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.photo-demo-card {
+  background: var(--white);
+  border: 1px solid rgba(11,29,51,0.1);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 100%;
+  max-width: 340px;
+  box-shadow: 0 12px 40px rgba(11,29,51,0.1);
+}
+
+.photo-demo-header {
+  margin-bottom: 1.5rem;
+}
+
+.photo-demo-badge {
+  background: var(--amber);
+  color: white;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.35rem 0.85rem;
+  border-radius: 20px;
+  letter-spacing: 0.03em;
+}
+
+.photo-demo-field {
+  margin-bottom: 1rem;
+}
+
+.photo-demo-field label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #5a6a7a;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.photo-demo-input {
+  border: 1px solid rgba(11,29,51,0.12);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.95rem;
+  color: var(--navy);
+  background: var(--cream);
+}
+
+.photo-demo-upload {
+  border: 2px dashed rgba(11,29,51,0.15);
+  border-radius: 8px;
+  padding: 1.5rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  color: #8a9aaa;
+  background: var(--cream);
+}
+
+.photo-demo-upload svg {
+  opacity: 0.4;
+}
+
+.photo-demo-upload span {
+  font-size: 0.875rem;
+}
+
+.photo-demo-btn {
+  width: 100%;
+  background: var(--navy);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 0.85rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: default;
+  margin-top: 0.5rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-body);
+}
+
+.photo-demo-note {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #8a9aaa;
+}
+
+/* --- Intro Pricing Banner --- */
+.intro-pricing-banner {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
+  border-radius: 12px;
+  padding: 1.4rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.intro-pricing-banner-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.intro-pricing-tag {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+}
+
+.intro-pricing-banner-left strong {
+  color: white;
+  font-size: 1rem;
+  font-family: var(--font-body);
+}
+
+.intro-pricing-banner-left span {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.875rem;
+}
+
+.intro-pricing-banner-left span strong {
+  color: white;
+  font-size: inherit;
+}
+
+.intro-pricing-banner-left code {
+  background: rgba(255,255,255,0.15);
+  color: white;
+  padding: 0.1em 0.45em;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.9em;
+  letter-spacing: 0.05em;
+}
+
 /* --- Responsive --- */
 @media (max-width: 1024px) {
   .hero-grid { grid-template-columns: 1fr; gap: 3rem; }
   .hero-visual { order: -1; max-width: 600px; margin: 0 auto; }
   .features-grid { grid-template-columns: repeat(2, 1fr); }
   .ai-spotlight { grid-template-columns: 1fr; }
+  .photo-spotlight { grid-template-columns: 1fr; gap: 2.5rem; }
   .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
   .testimonials-grid { grid-template-columns: 1fr; }
   .about-story { grid-template-columns: 1fr; }
@@ -1473,6 +1654,8 @@ p { max-width: 640px; }
 
   .section { padding: var(--sp-lg) 0; }
   .pricing-card { padding: 2rem; }
+  .intro-pricing-banner { padding: 1.25rem 1.25rem; flex-direction: column; align-items: flex-start; }
+  .intro-pricing-banner .btn-primary { width: 100%; justify-content: center; }
 }
 
 @media (max-width: 480px) {
