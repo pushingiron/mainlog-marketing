@@ -83,6 +83,49 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  // --- Email signup form ---
+  const emailForm = document.getElementById('emailSignupForm');
+  const signupSuccess = document.getElementById('signupSuccess');
+  if (emailForm && signupSuccess) {
+    const btnText = emailForm.querySelector('.signup-btn-text');
+    const btnLoading = emailForm.querySelector('.signup-btn-loading');
+    const submitBtn = emailForm.querySelector('.email-signup-btn');
+
+    emailForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Loading state
+      btnText.style.display = 'none';
+      btnLoading.style.display = 'inline';
+      submitBtn.disabled = true;
+
+      try {
+        // TODO: Replace the action attribute on #emailSignupForm with your
+        // Formspree endpoint (https://formspree.io/f/YOUR_FORM_ID) or similar,
+        // then switch the fetch URL below to match.
+        const formData = new FormData(emailForm);
+        const action = emailForm.getAttribute('action');
+
+        if (action && action !== '#') {
+          await fetch(action, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+        }
+
+        // Show success state
+        emailForm.style.display = 'none';
+        signupSuccess.style.display = 'flex';
+      } catch (err) {
+        btnText.style.display = 'inline';
+        btnLoading.style.display = 'none';
+        submitBtn.disabled = false;
+        alert('Something went wrong. Please try again.');
+      }
+    });
+  }
+
   // --- AI chat typing animation ---
   const typingEl = document.querySelector('.ai-typing');
   if (typingEl) {
